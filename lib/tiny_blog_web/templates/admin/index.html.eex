@@ -1,0 +1,33 @@
+<%= form_for @conn, Routes.text_path(@conn, :update, @text.id), fn f -> %>
+    <h4>Change Title</h4>
+
+    <div class="form-group">
+        <%= text_input f, :value, placeholder: "Title", class: "form-control" %>
+    </div>
+
+    <%= submit "Update", class: "button-small button-green" %>
+<% end %>
+
+<%= form_for @changeset, Routes.admin_path(@conn, :create), fn f -> %>
+<h4>New Post</h4>
+
+    <div class="form-group">
+        <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
+    </div>
+
+    <div class="form-group">        
+        <textarea placeholder="Text" class="text-area-small" id="user_description" name="entry[text]"></textarea>
+    </div>
+
+    <%= submit "Publish", class: "button button-green" %>
+<% end %>
+
+<table class="table">
+  <%= for entry <- @entries do %>
+    <tr>
+      <td><%= entry.title %></td>
+      <td class="edit"><%= link "Edit", to: Routes.entry_path(@conn, :edit, entry.id), class: "" %></td>
+      <td class="delete"><%= link "Delete" , to: Routes.entry_path(@conn, :delete, entry.id), method: :delete, data: [confirm: "Are you sure?"], class: ""  %></td>
+    </tr>
+  <% end %>
+</table>

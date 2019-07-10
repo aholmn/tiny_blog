@@ -1,0 +1,15 @@
+<%= form_for @changeset, Routes.entry_path(@conn, :update, @entry), fn f -> %>
+
+    Title
+    <div class="form-group">
+        <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
+    </div>
+
+    Text
+    <div class="form-group">        
+        <%= textarea f, :text, class: "form-control text-area-large"%>
+    </div>
+
+    <%= submit "Update", class: "button-small button-green" %>
+    <%= link "Go back", to: Routes.admin_path(@conn, :index), class: "link-grey" %>
+<% end %>

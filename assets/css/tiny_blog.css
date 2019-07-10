@@ -1,0 +1,40 @@
+table .edit {
+    width: 5%;
+    text-align: right;
+  }
+
+table .delete {
+    width: 10%;
+    text-align: right;
+}
+.delete a {
+  color: #fb0246;
+  font-size: 2rem;
+}
+
+.edit a {
+  color: #bcbcbc;
+  font-size: 2rem;
+}
+
+.link-grey {
+  color: #bcbcbc;
+  font-size: 2rem;
+}
+
+.button-green {
+  background-color: #03bd85;
+  border-color: #03bd85;
+}
+
+.entry-container h3 {
+  text-align: center;
+}
+
+.text-area-small {
+  min-height: 15rem;
+}
+
+.text-area-large {
+  min-height: 30rem;
+}
