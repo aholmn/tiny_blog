@@ -4,6 +4,9 @@ defmodule TinyBlogWeb.LayoutView do
 
   def title do
     text = Repo.get_by(TinyBlog.Text, keyword: "header")
-    text.value
+    cond do
+      text -> text.value
+      true -> "Blog"
+    end
   end
 end
